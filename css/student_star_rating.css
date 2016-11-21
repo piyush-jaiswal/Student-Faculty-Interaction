@@ -1,0 +1,88 @@
+
+input:enabled + label {
+	cursor: pointer;
+}
+
+.starRating:not(old){
+  display        : inline-block;
+
+  /*change width and height to increase container size, width = 5*height*/
+  width          : 15em;
+  height         : 3em;
+
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../images/star-off2.png');
+  background-size : contain; 
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+
+  /*Change width and height to increase size of star and adjust width and height of container accordingly, here height=width*/
+  width           : 3em;
+  height          : 3em;
+
+  background      : url('../images/star-on2.png');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+
+
+
+/*CSS when the input is disabled*/
+
+.starRating:not(old) > input:disabled + label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('../images/star-off2.png');
+  background-size : contain; 
+}
+
+.starRating:not(old) > input:disabled + label:before {
+  content         : '';
+  display         : block;
+
+  /*Change width and height to increase size of star and adjust width and height of container accordingly, here height=width*/
+  width           : 3em;
+  height          : 3em;
+
+  background      : url('../images/star-on2.png');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+/*End of css for disabled input*/
+
+
+
+
+/*For faculty and HOD comment this part out*/
+.starRating:not(old) > input:enabled + label:hover:before,
+.starRating:not(old) > input:enabled + label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before,
+.starRating:hover > input:disabled:checked ~ label:before{
+  opacity : 1;
+}
+
+
+/*For faculty and Hod uncomment this
+.starRating > :checked ~ label:before{
+  opacity : 1;
+}*/

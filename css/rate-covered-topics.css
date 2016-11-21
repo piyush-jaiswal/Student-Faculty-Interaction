@@ -1,0 +1,77 @@
+.page-content {
+    margin: 5px;
+    padding: 5px;
+}
+
+.jumbotron {
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 5px;
+    background-color: #f0f79a;
+}
+
+.course-header {
+    padding: 5px;
+}
+
+#code {
+    color:white;
+}
+
+#title {
+    text-align: center;
+    color:white;
+}
+
+.session-info {
+    color: white;
+}
+
+.course-topics {
+    margin: 100px;
+    padding: 5px;
+}
+
+.rating-system {
+    float: left;
+}
+
+.dropdown {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+}
+
+.topics-wrapper {
+    margin: 10px;
+    padding: 5px;
+    border: 2px solid darkslategrey;
+}
+
+.page-content-border {
+    margin: 15px;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    color: rgba(36, 7, 7, 0.96);
+    background-color: #fff;
+}
+
+button, input, select, textarea {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin: 5px;
+    font-family: cursive;
+    font-size: inherit;
+    line-height: 1.2;
+    color: white;
+    background-color: #a94442;
+}
+
+hr {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
