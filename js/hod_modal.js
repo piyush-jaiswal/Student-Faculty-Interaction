@@ -38,6 +38,7 @@ function validateForm() {
 
 
     else {
+        receiver = receiver.trim();
         receiver = encodeURI(receiver);
         subject = encodeURI(subject);
         message = encodeURI(message);

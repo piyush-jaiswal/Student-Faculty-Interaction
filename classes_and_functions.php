@@ -396,6 +396,117 @@ class faculty extends userDetails {
     }
 
 
+
+    //Returns the frequency of the topic in an associative array
+    function topic_getFrequency($courseCode, $session, $topic, $db) {
+
+        $frequency = array();
+
+        //calculating the no. of 5 raters
+        $query = "SELECT COUNT(topicRating) AS FREQ FROM courseTopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND topicRating='5'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['five'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 4 raters
+        $query = "SELECT COUNT(topicRating) AS FREQ FROM courseTopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND topicRating='4'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['four'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 3 raters
+        $query = "SELECT COUNT(topicRating) AS FREQ FROM courseTopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND topicRating='3'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['three'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 2 raters
+        $query = "SELECT COUNT(topicRating) AS FREQ FROM courseTopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND topicRating='2'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['two'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 1 raters
+        $query = "SELECT COUNT(topicRating) AS FREQ FROM courseTopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND topicRating='1'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['one'] = $row['FREQ'];
+        }
+
+        return $frequency;
+
+    }
+
+
+
+    //Returns the frequency of the subtopic in an associative array
+    function subtopic_getFrequency($courseCode, $session, $topic, $subtopic, $db) {
+
+        $frequency = array();
+
+        //calculating the no. of 5 raters
+        $query = "SELECT COUNT(subtopicRating) AS FREQ FROM courseSubtopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND subtopic='$subtopic' AND subtopicRating='5'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['five'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 4 raters
+        $query = "SELECT COUNT(subtopicRating) AS FREQ FROM courseSubtopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND subtopic='$subtopic' AND subtopicRating='4'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['four'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 3 raters
+        $query = "SELECT COUNT(subtopicRating) AS FREQ FROM courseSubtopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND subtopic='$subtopic' AND subtopicRating='3'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['three'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 2 raters
+        $query = "SELECT COUNT(subtopicRating) AS FREQ FROM courseSubtopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND subtopic='$subtopic' AND subtopicRating='2'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['two'] = $row['FREQ'];
+        }
+
+        
+        //calculating the no. of 1 raters
+        $query = "SELECT COUNT(subtopicRating) AS FREQ FROM courseSubtopicRating WHERE courseCode='$courseCode' AND session='$session' 
+                    AND topic='$topic' AND subtopic='$subtopic' AND subtopicRating='1'";
+        $result = mysqli_query($db, $query);
+        foreach($result as $row) {
+            $frequency['one'] = $row['FREQ'];
+        }
+
+        return $frequency;
+
+    }
+
+
+
 }
 
 
