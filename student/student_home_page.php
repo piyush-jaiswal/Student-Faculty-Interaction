@@ -49,6 +49,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/modal.css" rel="stylesheet">
 </head>
 
 <?php include('../header.php'); ?>

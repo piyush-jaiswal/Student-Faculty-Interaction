@@ -62,15 +62,15 @@
                 <div class="modal-content">
                     <div class="modal-header">
                     <span class="close"> &#9747; </span>
-                    <h2>Message</h2>
+                    <h2 style="color:white;">Message</h2>
                     </div>
                     <form class="modal-body" name="myForm" onsubmit="return validateForm()" method="POST">
                         <br>
-                        <label><b>TO:</b></lable> <input type="text" name="receiver" placeholder="Username" id='shorttxt' style="width:60%"><br>
+                        <b>TO:</b> <input type="text" name="receiver" placeholder="Username" id='shorttxt' style="width:60%"><br>
                         <br>
-                        <label><b>Subject:</b></lable> <input type="text" name="subject" PLACEHOLDER="Subject of your message" id='shorttxt' style="width:60%" maxlength="100"><br>
+                        <b>Subject:</b><input type="text" name="subject" PLACEHOLDER="Subject of your message" id='shorttxt' style="width:60%" maxlength="100"><br>
                         <br>
-                        <label><b >Message:</b></label> <textarea rows=6 cols=80 name="message" placeholder="Your message" wrap='soft' id='bigtxt' maxlength="500"></textarea><br>
+                        <b >Message:</b> <br><textarea rows=6 cols=100 name="message" placeholder="Your message" wrap='soft' id='bigtxt' maxlength="500"></textarea><br>
                         <br>
                         <input type="submit" value="Send Request" id='sendmessage' >    
                     </form>

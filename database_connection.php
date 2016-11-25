@@ -2,7 +2,7 @@
 
     $dbhost = 'localhost:3306';
     $dbuser = 'root';
-    $dbpass = 'q1w2e3r4';
+    $dbpass = '';
     $dbname = 'StudentFacultyInteraction';
     $db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
