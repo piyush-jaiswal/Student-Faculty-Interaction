@@ -28,10 +28,7 @@ input {
     border-color:#AF3937 ; 
     border-width:2px;
     }
-textarea{
-    border-style: solid ; 
-    border-color:#AF3937 ; 
-}
+
 select { 
     position: relative  ; 
     left: 60px; 
@@ -110,6 +107,20 @@ select {
 
 .close:hover,
 .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closeme {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closeme:hover,
+.closeme:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
