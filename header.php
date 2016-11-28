@@ -48,78 +48,9 @@
                             <div id="mydropnotificationdown" class="dropnotificationdown-content">
                                 <?php 
                                     foreach($notifications as $row) {
-                                        echo "<a href='#home' id='AcceptBtn'><b>$row[blurb]</b></a>";
+                                        echo "<a href='#home'><b>$row[blurb]</b></a>";
                                     }
                                 ?>
-
-
-                                <div id="acceptMeetingModal" class="modal">
-
-                                                <!-- Modal content -->
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                    <span class="closeme" style:"color: white;float: right;font-size: 28px;font-weight: bold;">&#9747;</span>
-                                                    <h2 style="color:white;">Message</h2>
-                                                    </div>
-                                                    
-                                                        <br>
-                                                        <b>From:</b> <input type="text" name="receiver" value="z" class=shorttxt disabled><br>
-                                                        <br>
-                                                        <b>Subject:</b> <input type="text" name="Subject" value="z" class=shorttxt disabled><br>
-                                                        <br>
-                                                        <b>Message:</b> <br><textarea rows=6 cols=80 name="message" wrap=soft class=bigtxt disabled>z</textarea><br>
-                                                        <br>
-                                                        <button id=acceptMeeting onclick="ActivateDateTime()">Accept</button>
-                                                        <button id=RejectMeeting>Cancel</button>
-                                                        <br>
-                                                        <form class="modal-body" id="Acceptanceform" name="acceptForm" action="" onsubmit="return validateAcceptanceForm()" method="POST" style="Display:none;">
-                                                        <lable><b>Date:</b></label><input type="date" name="Date" id=MeetingDate> <br>
-                                                        <br>
-                                                        <lable><b>Time:</b></label>
-                                                                <select name="Hour">
-                                                                    <option value="hr">hour</option>
-                                                                    <option value="1">1</option>
-                                                                    <option value="2">2</option>
-                                                                    <option value="3">3</option>
-                                                                    <option value="4">4</option>
-                                                                    <option value="5">5</option>
-                                                                    <option value="6">6</option>
-                                                                    <option value="7">7</option>
-                                                                    <option value="8">8</option>
-                                                                    <option value="9">9</option>
-                                                                    <option value="10">10</option>
-                                                                    <option value="11">11</option>
-                                                                    <option value="12">12</option>
-                                                                </select>
-
-                                                                <select name="Min">
-                                                                    <option value="min">min</option>
-                                                                    <option value="0">0</option>
-                                                                    <option value="10">10</option>
-                                                                    <option value="20">20</option>
-                                                                    <option value="30">30</option>
-                                                                    <option value="40">40</option>
-                                                                    <option value="50">50</option>
-                                                                </select>
-
-                                                                <select name="am">
-                                                                    <option value="AM">AM</option>
-                                                                    <option value="PM">PM</option>
-                                                                </select>
-
-                                                        <br>
-                                                        <br>
-                                                        <input type="submit" value="Send Request" id=sendmessage >    
-                                                    </form>
-                                                </div>
-
-                                                </div>
-
-
-
-
-
-
                             </div>
                         </div>
                     </div>

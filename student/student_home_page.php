@@ -107,9 +107,7 @@
             <script src="../js/bootstrap.min.js"> </script>
             <script src="../js/header.js" type="text/javascript"> </script>
             <script src="../js/common.js" type="text/javascript"> </script>
-            <script src="../js/student_modal.js" type="text/javascript"> </script>
-            <script src="../js/acceptMeetingRequest.js" type="text/javascript"> </script>
-
+            <script type="text/javascript" src="../js/student_modal.js"></script>
 </body>
 
 </html>
