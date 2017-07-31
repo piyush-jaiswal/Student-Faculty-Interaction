@@ -41,14 +41,14 @@
     //To update topics or subtopics
     if(isset($_POST['method'])) {
 
-        require 'faculty_auth_courseConducting.php';  //Comment this out to show the function of this file
-
         $courseHandout_ob = new courseHandout();
         $faculty_ob = new faculty();
         $method = $courseHandout_ob->stripBadChars($_POST['method']);
 
         //if topic is updated
         if($method == 'topicStatus_Update') {
+
+            require 'faculty_auth_courseConducting.php';  //Comment this out to show the function of this file
 
             if(isset($_POST['topic']) && isset($_POST['value']) && isset($_POST['courseCode'])) {
                
@@ -63,6 +63,9 @@
 
         //If subtopic is updated
         else if($method == 'subtopicStatus_Update') {
+
+            require 'faculty_auth_courseConducting.php';  //Comment this out to show the function of this file
+
             if(isset($_POST['topic']) && isset($_POST['subtopic']) && isset($_POST['value']) && isset($_POST['courseCode'])) {
                 
                 $session = $_SESSION['session'];
@@ -71,6 +74,34 @@
                 $subtopicStatus = $courseHandout_ob->stripBadChars($_POST['value']);
                 $courseCode = $courseHandout_ob->stripBadChars($_POST['courseCode']);
                 $faculty_ob->subtopicStatus_Update($courseCode, $session, $topic, $subtopic, $subtopicStatus, $db);
+            }
+        }
+
+
+        //if topicFrequency is to be seen
+        if($method == 'topic_getFrequency') {
+
+            if(isset($_POST['topic']) && isset($_POST['courseCode'])) {
+               
+                $session = $_SESSION['session'];
+                $topic = $_POST['topic'];
+                $courseCode = $courseHandout_ob->stripBadChars($_POST['courseCode']);
+                $faculty_ob->topic_getFrequency($courseCode, $session, $topic, $db);
+            }
+        }
+
+
+
+        //if subtopicFrequency is to be seen
+        if($method == 'subtopic_getFrequency') {
+
+            if(isset($_POST['topic']) && isset($_POST['courseCode']) && isset($_POST['subtopic'])) {
+               
+                $session = $_SESSION['session'];
+                $topic = $_POST['topic'];
+                $subtopic = $_POST['subtopic'];
+                $courseCode = $courseHandout_ob->stripBadChars($_POST['courseCode']);
+                $faculty_ob->subtopic_getFrequency($courseCode, $session, $topic, $subtopic, $db);
             }
         }
 

@@ -29,6 +29,10 @@
     $notifications = $checkUser_ob->checkNotifications($userID, $db);
     $_SESSION['notifications'] = $notifications;
 
+    //Setting the value of home and back options
+    $home = "#";
+    $back = "#";
+
     mysqli_close($db);
 
 ?>
@@ -44,6 +48,7 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/header.css" rel="stylesheet">
         <link href="../css/common.css" rel="stylesheet">
+        <link href="../css/modal.css" rel="stylesheet">
     </head>
 
 <?php include('../header.php'); ?>
@@ -65,7 +70,6 @@
                             <div class="panel">
                                 <ul>
                                     <li><a href="faculty_rate-covered-topics.php?course=<?php echo $row['courseCode']; ?>">View course handout</a></li>
-                                    <li><a href="#">Request meeting</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -79,7 +83,7 @@
                         <div>
                             <h3 id="my-profile">Profile</h3>
                         </div>
-                        <div><img id="user-face" src="../images/face.png" /></div>
+                        <div><img id="user-face" src="../images/vu.png" /></div>
                         <div id="profile-description">
                             <h4><b><?php echo $name ?></b></h4>
                             <h4>Employee id: <i><?php echo $userID; ?></i></h4>
@@ -100,6 +104,7 @@
     <script src="../js/header.js" type="text/javascript"> </script>
     <script src="../js/common.js" type="text/javascript"> </script>
     <script type="text/javascript" src="../js/faculty_modal.js"></script>
+    <script type="text/javascript" src="../js/acceptMeetingRequest.js"></script>
 </body>
 
 </html>

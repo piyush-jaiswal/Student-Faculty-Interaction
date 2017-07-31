@@ -2,7 +2,9 @@
 
     session_start();
 
-    $userID = "U101114FCS222"; //Hope this will be made available to us through mooodle login.
+    // $userID = "U101114FCS222";
+    $userID = "E101114FCS236";
+    // $userID = "E101114FCS208"; //Hope this will be made available to us through moodle login.
 
     require 'database_connection.php';
     include('classes_and_functions.php');

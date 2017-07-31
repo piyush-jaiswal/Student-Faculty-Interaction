@@ -101,10 +101,44 @@ class userClass {
         }
 
         else {
-            $notifications[] = array('blurb' => "You have no new notifications.", 'meetingID' => -'1' );
+            $notifications[] = array('blurb' => "You have no new notifications.", 'meetingID' => '-1' );
         }
 
         return $notifications;
+
+    }
+
+
+
+    //Returns notification details for a scheduleMeeting
+    function getNotificationDetail($meetingID, $db) {
+
+        $query = "SELECT sender,subject,reason,dateRequested FROM meetings WHERE meetingID='$meetingID'";
+        $result = mysqli_query($db, $query);
+
+        $meetingDetails = array();
+
+        foreach($result as $row) {
+            $meetingDetails['sender'] = $row['sender'];
+            $meetingDetails['subject'] = $row['subject'];
+            $meetingDetails['reason'] = $row['reason'];
+
+            $date = strtotime($row['dateRequested']);
+            $meetingDetails['dateRequested'] = date('d F, Y', $date);
+            break;
+        }
+
+        echo JSON_encode($meetingDetails);
+    }
+
+
+    function acceptMeetingRequest($meetingID, $approvedMeetingDate, $approvedTime, $db) {
+
+        $datetime = date_create_from_format("Y-m-d H", "$approvedMeetingDate $approvedTime");
+        $query = "UPDATE meetings SET status='accepted', approvedMeetingDate='$datetime' WHERE meetingID='$meetingID'";
+        mysqli_query($db, $query);
+
+        echo 'ysy';
 
     } 
 
@@ -400,6 +434,7 @@ class faculty extends userDetails {
     //Returns the frequency of the topic in an associative array
     function topic_getFrequency($courseCode, $session, $topic, $db) {
 
+        $topic = urldecode($topic); //decoding the string sent in encoded form through ajax
         $frequency = array();
 
         //calculating the no. of 5 raters
@@ -446,15 +481,18 @@ class faculty extends userDetails {
             $frequency['one'] = $row['FREQ'];
         }
 
-        return $frequency;
+        echo json_encode($frequency);
 
     }
+
 
 
 
     //Returns the frequency of the subtopic in an associative array
     function subtopic_getFrequency($courseCode, $session, $topic, $subtopic, $db) {
 
+        $topic = urldecode($topic); //decoding the string sent in encoded form through ajax
+        $subtopic = urldecode($subtopic); //decoding the string sent in encoded form through ajax
         $frequency = array();
 
         //calculating the no. of 5 raters
@@ -501,7 +539,7 @@ class faculty extends userDetails {
             $frequency['one'] = $row['FREQ'];
         }
 
-        return $frequency;
+        echo json_encode($frequency);
 
     }
 

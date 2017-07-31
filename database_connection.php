@@ -1,6 +1,6 @@
 <?php 
 
-    $dbhost = 'localhost:3306';
+    $dbhost = 'localhost';
     $dbuser = 'root';
     $dbpass = 'q1w2e3r4';
     $dbname = 'StudentFacultyInteraction';

@@ -4,7 +4,7 @@ var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-var btn1 = document.getElementById("sendmessage");
+//var btn1 = document.getElementById("sendmessage");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];

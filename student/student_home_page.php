@@ -34,6 +34,10 @@
        $facultyNames[] = $student_ob->getfacultyName($row['courseCode'], $db);
     }
 
+    //Setting the value of home and back options
+    $home = "#";
+    $back = "#";
+
     mysqli_close($db);
 
 ?>
@@ -49,6 +53,7 @@
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/modal.css" rel="stylesheet">
 </head>
 
 <?php include('../header.php'); ?>
@@ -70,7 +75,6 @@
                                         <ul>
                                             <li>Faculty: <a href="#"><?php echo $facultyNames[$index]; ?></a></li>
                                             <li><a href="student_rate-covered-topics.php?course=<?php echo $row['courseCode']; ?>">View course handout</a></li>
-                                            <li><a href="#">Request meeting</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,7 +90,7 @@
                                 <div>
                                     <h3 id="my-profile">Profile</h3>
                                 </div>
-                                <div><img id="user-face" src="../images/face.png" /></div>
+                                <div><img id="user-face" src="../images/rjt.jpg" /></div>
                                 <div id="profile-description">
                                     <h4><b><?php echo $name; ?></b></h4>
                                     <h4>Enrollment no: <i><?php echo $userID; ?></i></h4>

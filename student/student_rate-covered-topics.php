@@ -33,6 +33,10 @@
     $collapse_counter = 1; //For collapsable subtopics
     $rating_id_counter = 1; //For rating id
 
+    //Setting the value of home and back options
+    $home = "student_home_page.php";
+    $back = "student_home_page.php";
+
 ?>
 
 
@@ -41,6 +45,7 @@
 <html lang="en-US">
 
 <head>
+    <title>Student Faculty Interaction | Student-Course Handout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/bootstrap.min.css" rel="stylesheet">

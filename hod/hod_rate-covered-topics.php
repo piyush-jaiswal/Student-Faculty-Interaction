@@ -32,6 +32,10 @@
 
     $collapse_counter = 1;
 
+    //Setting the value of home and back options
+    $home = "hod_home_page.php";
+    $back = "hod_home_page.php";
+
 ?>
 
 
@@ -40,15 +44,111 @@
 <html lang="en-US">
 
 <head>
+    <title>Student Faculty Interaction | HOD-Course Handout</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/header.css" rel="stylesheet">
     <link href="../css/rate-covered-topics.css" rel="stylesheet">
     <link href="../css/faculty_star_rating.css" rel="stylesheet">
+    <link href="../css/modal.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/histogram.css">
 </head>
 
 <?php include('../header.php'); ?>
+
+
+<!--View-frequency histogram-->
+     <!-- The Modal -->
+                <div id="hisModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <span class="closeFre">&#9747;</span>
+                    <h2>Frequency viewer</h2>
+                    </div>
+                            <div class="container">
+            <div class="inner">
+   
+    
+                <div class="histo">
+                <div class="five histo-rate">
+                    <span class="histo-star">
+                    <i class="active icon-star"></i> 5 </span>
+                    <span class="bar-block">
+                    <span id="bar-five" class="bar">
+                        <b><span></span>&nbsp;</b>
+                    </span> 
+                    </span>
+                </div>
+                
+                <div class="four histo-rate">
+                    <span class="histo-star">
+                    <i class="active icon-star"></i> 4 </span>
+                    <span class="bar-block">
+                    <span id="bar-four" class="bar">
+                        <b><span></span>&nbsp;</b>
+                    </span> 
+                    </span>
+                </div> 
+                
+                <div class="three histo-rate">
+                    <span class="histo-star">
+                    <i class="active icon-star"></i> 3 </span>
+                    <span class="bar-block">
+                    <span id="bar-three" class="bar">
+                        <b><span></span>&nbsp;</b>
+                    </span> 
+                    </span>
+                </div>
+                
+                <div class="two histo-rate">
+                    <span class="histo-star">
+                    <i class="active icon-star"></i> 2 </span>
+                    <span class="bar-block">
+                    <span id="bar-two" class="bar">
+                        <b><span></span>&nbsp;</b>
+                    </span> 
+                    </span>
+                </div>
+                
+                <div class="one histo-rate">
+                    <span class="histo-star">
+                    <i class="active icon-star"></i> 1 </span>
+                    <span class="bar-block">
+                    <span id="bar-one" class="bar">
+                        <b><span></span>&nbsp;</b>
+                    </span> 
+                    </span>
+                </div>
+                </div>
+
+                <div class="rating">
+                
+                    <div class="rating-users">
+                    
+                    </div>
+                    </div>
+                
+                </div>
+            </div>
+
+
+
+                </div>
+
+                </div>
+
+    <!--end of View-freqency modal-->
+
+
+
+
+
+
+
+
 
             <div class="page-content-border">
                 <div class="page-content">
@@ -160,11 +260,13 @@
                                                         </form>
 
                                                         <?php
-                                                            //Echoing view frequency button id the topics has no subtopics
-                                                            if($hasSubtopics == false) {
-                                                                echo '<button class="frequency" type="button" name="view_frequency">View Frequency</button>';
-                                                            }
-                                                        ?>
+
+                                                        $topic = $row['topic'];
+                                                        //Echoing view frequency button id the topics has no subtopics
+                                                        if($hasSubtopics == false) {
+                                                            echo "<button class=\"frequency\" type=\"button\" name=\"view_frequency\" onclick=\"topic_viewFrequency('$courseCode', '$topic')\" >View Frequency</button>";
+                                                        }
+                                                    ?>
 
                                                     </div>
                                                 </div>
@@ -247,7 +349,7 @@
                                                             <label for="rating<?php echo $rating_id_counter++; ?>">1</label>
                                                         </span>
                                                     </form>
-                                                    <button class="frequency" type="button" name="view_frequency">View Frequency</button>
+                                                    <button class="frequency" type="button" name="view_frequency" onclick="subtopic_viewFrequency('<?php echo $courseCode; ?>', '<?php echo $topic; ?>', '<?php echo $subtopics["subtopic"]; ?>')" >View Frequency</button>
                                                 </div>
                                             </div>
 
@@ -296,6 +398,8 @@
     <script type ="text/javascript" src="../js/rate-covered-topics.js"> </script>
     <script type ="text/javascript" src="../js/header.js"></script>
     <script type="text/javascript" src="../js/hod_modal.js"></script>
+    <script type="text/javascript" src="../js/histogramModal.js"></script>
+    <script type="text/javascript" src="../js/acceptMeetingRequest.js"></script>
 </body>
 
 </html>
