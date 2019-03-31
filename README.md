@@ -7,26 +7,11 @@ Web based platform for making student-faculty interaction easier. The platform p
 2. Change the root directory of your web server to point to the cloned repository
 3. Import the database structure from `/StudentFacultyInteraction Database Dump/StudentFacultyInteraction Dump.sql`
 4. Go to `/database_connection.php` and change the connection variables according to your system
-5. Open `start.php`!
+5. Open the server in your browser.
 
 <br>
 <h3>Preview</h3>
 
-![Faculty landing page](/screenshots/faculty_landing_page.jpg?raw=true "Faculty landing page")
-**<p align = "center">Faculty landing page</p>**
-<br><br>
-
-![Schedule meeting module](/screenshots/schedule_meeting.jpg?raw=true "Schedule meeting module")
-**<p align = "center">Schedule meeting module</p>**
-<br><br>
-
-![View meeting request](/screenshots/view_meeting_requests.jpg?raw=true "View meeting request")
-**<p align = "center">View meeting request</p>**
-<br><br>
-
-![Course handout](/screenshots/course_handout.jpg?raw=true "Course handout")
-**<p align = "center">Course handout</p>**
-<br><br>
-
-![Rating frequency](/screenshots/rating_frequency.jpg?raw=true "Rating frequency")
-**<p align = "center">Rating frequency</p>**
+<p align="center">
+  <img src="https://github.com/piyush-jaiswal/Student-Faculty-Interaction/docs/SFI.gif">
+</p>
