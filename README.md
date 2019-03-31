@@ -8,10 +8,8 @@ Web based platform for making student-faculty interaction easier. The platform p
 3. Import the database structure from `/StudentFacultyInteraction Database Dump/StudentFacultyInteraction Dump.sql`
 4. Go to `/database_connection.php` and change the connection variables according to your system
 5. Open the server in your browser.
-
-<br>
 <h3>Preview</h3>
 
 <p align="center">
-  <img src="https://github.com/piyush-jaiswal/Student-Faculty-Interaction/docs/SFI.gif">
+  <img src="https://github.com/piyush-jaiswal/Student-Faculty-Interaction/blob/master/docs/SFI.gif">
 </p>
